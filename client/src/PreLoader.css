@@ -1,0 +1,54 @@
+*
+{
+    margin: 0;
+    padding:0;
+    /* overflow: hidden; */
+}
+.loading-page{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 9999;
+    animation: fadeIn 0.7s;
+}
+#svg{
+    height: 150px;
+    width: auto;
+    color: white;
+    stroke: #195030;
+    stroke-width: 10px;
+    fill-opacity: 0;
+    stroke-dasharray: 5000;
+    stroke-dashoffset: 2500;
+    animation: dash 4s ease, glow 2s infinite alternate;
+    filter: drop-shadow(0 0 24px #2e7d32aa) drop-shadow(0 0 8px #a5d6a7);
+    background: rgba(255,255,255,0.35);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.18);
+    padding: 24px;
+    backdrop-filter: blur(8px);
+}
+@keyframes dash {
+   to{
+    stroke-dashoffset: 5000;
+    stroke-dasharray: 2500;
+   }
+}
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 24px #2e7d32aa) drop-shadow(0 0 8px #a5d6a7);
+  }
+  to {
+    filter: drop-shadow(0 0 48px #43a047cc) drop-shadow(0 0 16px #a5d6a7);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+} 
